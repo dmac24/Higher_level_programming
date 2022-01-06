@@ -29,7 +29,7 @@ int is_palindrome(listint_t **head)
 		size_list++;
 		current = current->next;
 	}
-	size_list--; /*Cuenta una posición más por lo que se disminuye en 1*/
+	size_list--; 
 	mitad = size_list / 2;
 
 	for (i = 0; i <= mitad; i++, size_list--)
