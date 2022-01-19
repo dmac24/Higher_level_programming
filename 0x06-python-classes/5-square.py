@@ -7,6 +7,8 @@ class Square:
     Square class, Private instance attribute: size
     Public instance method: def area(self):
     that returns the current square area
+    Public instance method: def my_print(self):
+    that prints in stdout the square with the character #
     """
     def __init__(self, size=0):
         self.__size = size
@@ -29,7 +31,6 @@ class Square:
 
     def my_print(self):
         for i in range(self.__size):
-            if self.__size == 0:
-                print()
-
             print("#" * self.__size)
+        if self.__size == 0:
+                print()
