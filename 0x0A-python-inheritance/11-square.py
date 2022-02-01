@@ -4,6 +4,7 @@ Square
 Write a class Square that inherits from Rectangle
 """
 
+
 class BaseGeometry:
     """
     Raise a exception
