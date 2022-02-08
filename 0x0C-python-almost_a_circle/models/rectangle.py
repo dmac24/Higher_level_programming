@@ -19,7 +19,7 @@ class Rectangle:
         self.x = x
         self.y = y
 
-        
+
     @property
     def width(self):
         return self.__width
@@ -79,8 +79,3 @@ class Rectangle:
             raise ValueError("y must be >= 0")
 
         self.__y = value
-
-     def area(self):
-        """ Returns the area value of rectangle"""
-
-        return self.__width * self.__height
