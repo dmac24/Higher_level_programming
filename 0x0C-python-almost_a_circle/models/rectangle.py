@@ -11,71 +11,86 @@ class Rectangle:
     """ A Rectangle Class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize the rectangle class"""
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = width
+
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = height
+
+        if not isinstance(x, int):
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = x
+
+        if not isinstance(y, int):
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = y
         self.__id = super().__init__(id)
 
     @property
     def width(self):
+        """ Getter for Width """
         return self.__width
 
     @width.setter
-    def width(self, value):
-
-        if type(value) != int:
+    def width(self, width=0):
+        """ Setter for width """
+        if not isinstance(width, int):
             raise TypeError("width must be an integer")
-
-        elif value <= 0:
+        if width <= 0:
             raise ValueError("width must be > 0")
-
-        self.__width = value
+        self.__width = width
 
     @property
     def height(self):
+        """ Getter for height """
         return self.__height
 
     @height.setter
-    def height(self, value):
-
-        if type(value) != int:
+    def height(self, height=0):
+        """ Setter for height """
+        if not isinstance(height, int):
             raise TypeError("height must be an integer")
-
-        elif value <= 0:
+        if height <= 0:
             raise ValueError("height must be > 0")
-
-        self.__height = value
+        self.__height = height
 
     @property
     def x(self):
+        """ Getter for x """
         return self.__x
 
     @x.setter
-    def x(self, value):
-
-        if type(value) != int:
+    def x(self, x=0):
+        """ Setter for x """
+        if not isinstance(x, int):
             raise TypeError("x must be an integer")
-
-        if value < 0:
+        if x < 0:
             raise ValueError("x must be >= 0")
-
-        self.__x = value
+        self.__x = x
 
     @property
     def y(self):
+        """ Getter for y """
         return self.__y
 
     @y.setter
-    def y(self, value):
-
-        if type(value) != int:
+    def y(self, y=0):
+        """ Setter for y """
+        if not isinstance(y, int):
             raise TypeError("y must be an integer")
-
-        if value < 0:
+        if y < 0:
             raise ValueError("y must be >= 0")
-        self.__y = value
-
+            self.__y = y
 
     def area(self):
         """
