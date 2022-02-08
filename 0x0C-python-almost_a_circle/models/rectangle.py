@@ -12,11 +12,12 @@ class Rectangle:
     """ A Rectangle Class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize the rectangle class"""
+        super().__init__(id)
+
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
@@ -102,5 +103,7 @@ class Rectangle:
 
         self.__y = value
 
+     def area(self):
+        """ Returns the area value of rectangle"""
 
-        
+        return self.__width * self.__height
