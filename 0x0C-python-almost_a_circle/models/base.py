@@ -14,6 +14,23 @@ Esta clase será la "base" de todas las demás clases en este proyecto.
 """
 """El objetivo es administrar el atributo de identificación en todas sus clases futuras y evitar duplicar el mismo código (por extensión, los mismos errores)"""
 
-__nb_objects = 0
+"""
+This module contains the "Base" class
+"""
 
-def __init__(self, id=None):
+import json
+
+
+class Base:
+
+    """ A base Class"""
+    __nb_objects = 0
+
+
+    def __init__(self, id=None):
+        """Initiañize the base class"""
+        if id is None:
+            Base.__nb_objects += 1
+            self.id = self.__nb_objects
+        else:
+            self.id = id
