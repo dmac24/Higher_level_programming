@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-from models.base import Base
 """
 This module contains the "Rectangle" for base class
 """
+
+from models.base import Base
 
 
 class Rectangle(Base):
