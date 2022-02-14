@@ -82,3 +82,30 @@ class Rectangle(Base):
         st = "[Rectangle] ({:d}) {:d}/{:d}".format(self.id, self.__x, self.__y)
         st += " - {:d}/{:d}".format(self.__width, self.__height)
         return st
+
+    def update(self, *args, **kwargs):
+        """Updates the values of the class"""
+        if len(args):
+            for i, a in enumerate(args):
+                if i == 0:
+                    self.id = a
+                elif i == 1:
+                    self.width = a
+                elif i == 2:
+                    self.height = a
+                elif i == 3:
+                    self.x = a
+                elif i == 4:
+                    self.y = a
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
+                
